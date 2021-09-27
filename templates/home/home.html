@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block head_content %}
+<title>Countries</title>
+{% endblock %}
+
+{% block content %}
+<div class="country">
+    <div class="form_container">
+        <form action="{% url 'country' %}" method="POST">
+            {% csrf_token %}
+            {{ country_form }}
+            <input class="country_select_button" type="submit" value="Select">
+        </form>
+    </div>
+    <div class="country_data_container">
+        <div class="country_data">
+            <h2>Name: {{ name }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>Capital: {{ capital }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>Region: {{ region }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>Subregion: {{ subregion }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>Coin: {{ coin }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>Calling code: {{ calling_code }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>languages: {{ languages }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>latitud: {{ latitud }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>Longitud: {{ longitud }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>Demonyms: {{ demonyms }}</h2>
+        </div>
+        <div class="country_data">
+            <h2>Area: {{ area }} km</h2>
+        </div>
+        <div class="country_data">
+            <h2>Domain: {{ domain }}</h2>
+        </div>
+        
+    </div>  
+    <div class="country_data" style="border:0; background-color:#74D5DD;">
+        <img src="{{ flag }}">
+    </div> 
+    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+
+        <path d='M 10 10 L -200 -700' stroke="black"/>      
+      
+    </svg>
+    
+</div>
+
+
+{% endblock %}
